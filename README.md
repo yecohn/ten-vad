@@ -190,7 +190,7 @@ Note: You could use other versions of above packages, but we didn't test other v
 
 <br>
 
-The **lib** only depend on numpy, you have to install the dependency via requirements.txt:
+The **lib** only depends on numpy, you have to install the dependency via requirements.txt:
 
 ```pip install -r requirements.txt```
 
