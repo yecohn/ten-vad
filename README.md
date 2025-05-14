@@ -61,11 +61,11 @@ We evaluated the RTF (Real-Time Factor) across five distinct platforms, each equ
     <td rowspan="9" style="text-align: center; vertical-align: middle;"> 2.16MB(JIT) / 2.22MB(ONNX) </td>
   </tr>
   <tr>
-    <td style="white-space: nowrap;"> Intel(R) Xeon(R) Platinum 8253 </td>
+    <td > Intel(R) Xeon(R) Platinum 8253 </td>
     <td align="center"> 0.0136 </td>
   </tr>
   <tr>
-    <td style="white-space: nowrap;"> Intel(R) Xeon(R) Gold 6348 CPU @ 2.60GHz </td>
+    <td > Intel(R) Xeon(R) Gold 6348 CPU @ 2.60GHz </td>
     <td align="center"> 0.0086 </td>
     <td align="center"> 0.0127 </td>
   </tr>
@@ -86,7 +86,7 @@ We evaluated the RTF (Real-Time Factor) across five distinct platforms, each equ
     <th align="center" rowspan="2"> Android </th>
     <td> Galaxy J6+ (32bit, 425) </td>
     <td align="center"> 0.0570 </td>
-    <td rowspan="2" style="white-space: nowrap;" style="text-align: center; vertical-align: middle;"> 373KB(v7a) / 532KB(v8a)</td>
+    <td rowspan="2" style="text-align: center; vertical-align: middle;"> 373KB(v7a) / 532KB(v8a)</td>
   </tr>
   <tr>
     <td> Oppo A3s (450) </td>
