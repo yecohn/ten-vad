@@ -2,7 +2,6 @@
 license: apache-2.0
 ---
 # **TEN VAD**
-
 ***A Low-Latency, Lightweight and High-Performance Streaming VAD***
 
 
@@ -18,7 +17,6 @@ license: apache-2.0
 
 The precision-recall curves comparing the performance of WebRTC VAD (pitch-based), Silero VAD, and TEN VAD are shown below. The evaluation is conducted on the precisely manually annotated TEN-VAD-TestSet. The audio files are from librispeech, gigaspeech, DNS Challenge etc. As demonstrated, TEN VAD achieves the best performance. Additionally, cross-validation experiments conducted on large internal real-world datasets demonstrate the reproducibility of these findings. The **TEN-VAD-TestSet with annotated labels** is released in directory "TEN-VAD-TestSet" of this repository.
 
- <br>
 
 <div style="text-align:">
   <img src="./images/PR_Curves_TEN-VAD-TestSet.png" width="800">
@@ -30,14 +28,14 @@ Note that the default threshold of 0.5 is used to generate binary speech indicat
 cd ./examples
 python plot_pr_curves.py
 ```
-<br>
+
 
 ### **2. Agent-Friendly:** 
 As illustrated in the figure below, TEN VAD rapidly detects speech-to-non-speech transitions, whereas Silero VAD suffers from a delay of several hundred milliseconds, resulting in increased end-to-end latency in human-agent interaction systems. In addition, as demonstrated in the 6.5s-7.0s audio segment, Silero VAD fails to identify short silent durations between adjacent speech segments.
 <div style="text-align:">
   <img src="./images/Agent-Friendly-image.png" width="800">
 </div>
-<br>
+
 
 ### **3. Lightweight:**
 We evaluated the RTF (Real-Time Factor) across five distinct platforms, each equipped with varying CPUs. TEN VAD demonstrates much lower computational complexity and smaller library size than Silero VAD.
@@ -113,24 +111,19 @@ We evaluated the RTF (Real-Time Factor) across five distinct platforms, each equ
     padding: 8px;
   }
 </style>
-<br>
 
 ### **4. Multiple programming languages and platforms:**
 TEN VAD provides cross-platform C compatibility across five operating systems (Linux x64, Windows, macOS, Android, iOS), with Python bindings optimized for Linux x64.
-<br>
-<br>
 
 
 ### **5. Supproted sampling rate and hop size:**
 TEN VAD operates on 16kHz audio input with configurable hop sizes (optimized frame configurations: 160/256 samples=10/16ms). Other sampling rates must be resampled to 16kHz.
-<br>
-<br>
+
 
 ## **Installation**
 ```
 git clone https://huggingface.co/TEN-framework/ten-vad
 ```
-<br>
 
 ## **Quick Start**
 The project supports five major platforms with dynamic library linking.
@@ -180,7 +173,6 @@ The project supports five major platforms with dynamic library linking.
     <td> 1. not simulator <br> 2. not iPad </td>
   </tr>
 </table>
-<br>
 
 
 ### **Python Usage**
@@ -201,7 +193,6 @@ You can install the above mentioned dependencies via requirements.txt:
 ```
 pip install -r requirements.txt
 ```
-<br>
 
 #### **Usage**
 Note: For usage in python, you can either use it by **git clone** or **pip**.
@@ -222,7 +213,6 @@ cd ./examples
 ```
 python test.py s0724-s0730.wav out.txt
 ```
-<br>
 
 ##### **By using pip:**
 
@@ -237,7 +227,6 @@ pip install -U --force-reinstall -v git+https://github.com/TEN-framework/ten-vad
 ```
 from ten_vad import TenVad
 ```
-<br>
 
 ### **C Usage**
 #### **Build Scripts**
@@ -267,7 +256,6 @@ Runtime library path configuration:
 - Run demo with sample audio s0724-s0730.wav
 - Processed results saved to out.txt
 
-<br>
 
 The detailed usage methods of each platform are as follows <br> 
 
@@ -282,7 +270,6 @@ The detailed usage methods of each platform are as follows <br>
 1) cd ./examples
 2) ./build-and-deploy-linux.sh
 ```
-<br>
 
 ####  **2. Windows**
 ##### **Requirements**
@@ -298,7 +285,6 @@ The detailed usage methods of each platform are as follows <br>
     - Visual Studio version (default: 2019)
 3) ./build-and-deploy-windows.bat
 ```
-<br>
 
 ####  **3. macOS**
 ##### **Requirements**
@@ -313,7 +299,6 @@ The detailed usage methods of each platform are as follows <br>
   - Alternative: x86_64 (Intel)
 3) ./build-and-deploy-mac.sh
 ```
-<br>
 
 ####  **4. Android**
 ##### **Requirements**
@@ -330,7 +315,6 @@ The detailed usage methods of each platform are as follows <br>
   - Toolchain: aarch64-linux-android-clang (default) or custom NDK toolchain
 4) ./build-and-deploy-android.sh
 ```
-<br>
 
 ####  **5. iOS**
 ##### **Requirements**
@@ -381,7 +365,6 @@ cd ./examples
       - Specify your Certification
 
     3.5. Build in Xcode and run demo on your device.
-<br>
 
 ## **Citations**
 ```
@@ -396,7 +379,6 @@ cd ./examples
   email = {developer@ten.ai}
 }
 ```
-<br>
 
 ## **License**
 This project is Apache 2.0 licensed.
