@@ -1,3 +1,6 @@
+---
+license: apache-2.0
+---
 # **TEN VAD**
 
 ***A Low-Latency, Lightweight and High-Performance Streaming VAD***
