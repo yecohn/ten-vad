@@ -226,7 +226,7 @@ python test.py s0724-s0730.wav out.txt
 1. Install via pip 
 
 ```
-pip install -U --force-reinstall -v git+https://huggingface.co/TEN-framework/ten-vad
+pip install -U --force-reinstall -v git+https://github.com/TEN-framework/ten-vad.git
 ```
 
 2. Write your own use cases and import the class, the attributes of class TenVAD you can refer to ten_vad.py
