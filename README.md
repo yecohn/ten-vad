@@ -1,5 +1,16 @@
 ---
 license: apache-2.0
+tags:
+- voice_activity_detection
+- speech_activity_detection
+- real_time
+- vad
+- sad
+- speech
+- audio
+- silero-vad
+- conversational
+- automatic_speech_recognition
 ---
 # **TEN VAD**
 ***A Low-Latency, Lightweight and High-Performance Streaming VAD***
