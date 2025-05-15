@@ -227,7 +227,7 @@ python test.py s0724-s0730.wav out.txt
 1. Install via pip 
 
 ```
-pip install -U --force-reinstall -v git+https://github.com/TEN-framework/ten-vad.git
+pip install -U --force-reinstall -v git+https://huggingface.co/TEN-framework/ten-vad
 ```
 
 2. Write your own use cases and import the class, the attributes of class TenVAD you can refer to ten_vad.py
@@ -383,7 +383,6 @@ cd ./examples
   publisher = {GitHub},
   journal = {GitHub repository},
   howpublished = {https://github.com/TEN-framework/ten-vad.git},
-  commit = {insert_some_commit_here},
   email = {developer@ten.ai}
 }
 ```
