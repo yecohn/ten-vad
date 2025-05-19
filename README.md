@@ -1,16 +1,16 @@
 ---
 license: apache-2.0
 tags:
-- voice_activity_detection
-- speech_activity_detection
-- real_time
+- voice activity detection
+- speech activity detection
+- real time
 - vad
 - sad
 - speech
 - audio
-- silero-vad
+- silero vad
 - conversational
-- automatic_speech_recognition
+- automatic speech recognition
 pipeline_tag: voice-activity-detection
 ---
 # **TEN VAD**
