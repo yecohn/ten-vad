@@ -11,6 +11,7 @@ tags:
 - silero-vad
 - conversational
 - automatic_speech_recognition
+pipeline_tag: voice-activity-detection
 ---
 # **TEN VAD**
 ***A Low-Latency, Lightweight and High-Performance Streaming VAD***
