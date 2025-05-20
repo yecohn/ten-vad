@@ -495,7 +495,9 @@ cd ./examples
 <br>
 
 ## **License**
-This project is Apache 2.0 licensed with certain conditions.
+TEN-VAD is currently released as a binary under Apache 2.0 License with certain conditions. Based on community feedback and interest, we plan to progressively open source the internal components of the binary and adopt an appropriate open source license. 
+
+For more details, please refer to the [LICENSE](LICENSE) file.
 
 [back-to-top]: https://img.shields.io/badge/-Back_to_top-gray?style=flat-square
 
