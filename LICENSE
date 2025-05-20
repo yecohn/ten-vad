@@ -3,11 +3,16 @@ Open Source License
 TEN-VAD is currently released as a binary under the Apache License v2.0, with the following additional conditions. Based on community feedback and interest, we plan to progressively open source its internal components and adopt an appropriate open source license as the project evolves.
 
 You may reproduce, prepare Derivative Works of, publicly display, publicly perform, sublicense, distribute, or otherwise make available (together, “Deploy”) TEN-VAD, for commercial or non-commercial purposes, provided that you agree to abide by the terms below:
+
 	1.	You may not (i) host TEN-VAD or its Derivative Works on any End User devices, including but not limited to mobile terminal devices, or (ii) Deploy TEN-VAD in a way that competes with Agora’s offerings and/or enables others to do so, including (without limitation) allowing any third party to develop or deploy Applications.
+
 	2.	You may Deploy TEN-VAD solely to create and enable deployment of your Application(s), solely for your benefit and the benefit of your direct End Users. If you prefer, you may include the following notice in your Application documentation:
 “Powered by TEN-VAD.”
+
 	3.	Derivative Works of TEN-VAD remain subject to this Open Source License.
+
 	4.	“End Users” refers to the end-users of your Application(s) who access TEN-VAD solely as needed to use your Application(s).
+	
 	5.	“Application(s)” refers to your software programs designed or developed using TEN-VAD or where deployment is enabled by TEN-VAD.
 
 Copyright © 2025 Agora
