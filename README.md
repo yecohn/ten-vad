@@ -212,6 +212,12 @@ For **running demo or plotting PR curves**, you have to install the dependencies
 
 ```pip install -r ./examples/requirements.txt```
 
+Note that if you did not install **libc++1**, you have to run the code below to install it:
+```
+sudo apt update
+sudo apt install libc++1
+```
+
 <br>
 
 #### **Usage**
@@ -284,6 +290,12 @@ The detailed usage methods of each platform are as follows <br>
 - Clang (e.g. 6.0.0-1ubuntu2 verified)
 - CMake
 - Terminal
+
+Note that if you did not install **libc++1**, you have to run the code below to install it:
+```
+sudo apt update
+sudo apt install libc++1
+```
 
 ##### **Usage**
 ```
