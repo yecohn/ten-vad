@@ -238,7 +238,6 @@ The project supports five major platforms with dynamic library linking.
 </table>
 <br>
 
-
 ### **Python Usage**
 #### **1. Linux**
 #### **Requirements**
@@ -263,6 +262,12 @@ The **lib** only depend on numpy, you have to install the dependency via require
 For **running demo or plotting PR curves**, you have to install the dependencies:
 
 ```pip install -r ./examples/requirements.txt```
+
+Note that if you did not install **libc++1**, you have to run the code below to install it:
+```
+sudo apt update
+sudo apt install libc++1
+```
 
 <br>
 
@@ -340,6 +345,12 @@ The detailed usage methods of each platform are as follows <br>
 - Clang (e.g. 6.0.0-1ubuntu2 verified)
 - CMake
 - Terminal
+
+Note that if you did not install **libc++1**, you have to run the code below to install it:
+```
+sudo apt update
+sudo apt install libc++1
+```
 
 ##### **Usage**
 ```
