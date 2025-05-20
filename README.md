@@ -1,5 +1,4 @@
 ---
-license: apache-2.0
 tags:
 - voice activity detection
 - speech activity detection
@@ -412,4 +411,4 @@ cd ./examples
 ```
 
 ## **License**
-This project is Apache 2.0 licensed.
+This project is Apache 2.0 licensed with certain conditions. 
