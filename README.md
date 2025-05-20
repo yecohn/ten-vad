@@ -410,5 +410,28 @@ cd ./examples
 }
 ```
 
-## **License**
-This project is Apache 2.0 licensed with certain conditions. 
+## Usage Guidance
+
+1. You may not (i) host the TEN VAD or the Derivative Works on any End
+   User devices, including but not limited to any mobile terminal devices
+   or (ii) Deploy the TEN VAD in a way that competes with Agora's
+   offerings and/or that allows others to compete with Agora's offerings,
+   including without limitation enabling any third party to develop or
+   deploy Applications.
+
+2. You may Deploy the TEN VAD solely to create and enable deployment
+   of your Application(s) solely for your benefit and the benefit of your
+   direct End Users. If you prefer, you may include the following notice in
+   the documentation of your Application(s): "Powered by TEN VAD".
+
+3. "End Users" shall mean the end-users of your Application(s) who access
+   the TEN VAD solely to the extent necessary to access and use the
+   Application(s) you create or deploy using TEN VAD.
+
+4. "Application(s)" shall mean your software programs designed or developed
+   by using the TEN VAD or where deployment is enabled by the TEN
+   VAD.
+
+## Future Open Source Plan
+
+TEN-VAD is currently released as a binary. Based on community feedback and interest, we plan to progressively open source the internal components of the binary.
