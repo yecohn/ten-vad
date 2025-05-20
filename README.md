@@ -5,7 +5,6 @@
 [![Issues closed](https://img.shields.io/github/issues-search?query=repo%3ATEN-framework%2Ften-vad%20is%3Aclosed&label=issues%20closed&labelColor=gray&color=green)](https://github.com/TEN-framework/ten-vad/issues)
 ![](https://img.shields.io/github/contributors/ten-framework/ten-vad?color=c4f042&labelColor=gray&style=flat-square)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome!-brightgreen.svg?style=flat-square)](https://github.com/TEN-framework/ten-vad/pulls)
-![GitHub license](https://img.shields.io/badge/License-Apache_2.0_with_certain_conditions-blue.svg?labelColor=%20%23155EEF&color=%20%23528bff)
 
 [![GitHub watchers](https://img.shields.io/github/watchers/TEN-framework/ten-vad?style=social&label=Watch)](https://GitHub.com/TEN-framework/ten-vad/watchers/?WT.mc_id=academic-105485-koreyst)
 [![GitHub forks](https://img.shields.io/github/forks/TEN-framework/ten-vad?style=social&label=Fork)](https://GitHub.com/TEN-framework/ten-vad/network/?WT.mc_id=academic-105485-koreyst)
@@ -37,13 +36,14 @@
     - [iOS](#5-ios)
 - [TEN Ecosystem](#ten-ecosystem)
 - [Citations](#citations)
-- [License](#license)
+- [Usage Guidance](#usage-guidance)
+- [Future Open Source Plan](#future-open-source-plan)
 
 <br>
 
 ## Welcome to TEN 
 
-TEN is a collection of open-source projects for building real-time, multimodal conversational voice agents, including [ TEN Framework ](https://github.com/ten-framework/ten-framework), [ TEN VAD ](https://github.com/ten-framework/ten-vad), [ TEN Turn Detection ](https://github.com/ten-framework/ten-turn-detection), TEN Agent, TMAN Designer, [ TEN Portal ](https://github.com/ten-framework/portal), and more.
+TEN is a collection of open-source projects for building real-time, multimodal conversational voice agents. It includes [ TEN Framework ](https://github.com/ten-framework/ten-framework), [ TEN Turn Detection ](https://github.com/ten-framework/ten-turn-detection), TEN Agent, TMAN Designer, and [ TEN Portal ](https://github.com/ten-framework/portal), all fully open-source. [ TEN VAD ](https://github.com/ten-framework/ten-vad) is not fully open-source yet, but it is open for public use.
 
 <br>
 
@@ -494,8 +494,32 @@ cd ./examples
 ```
 <br>
 
-## **License**
-This project is Apache 2.0 licensed with certain conditions.
+## Usage Guidance
+
+1. You may not Deploy the TEN VAD in a way that competes with Agora's
+   offerings and/or that allows others to compete with Agora's offerings,
+   including without limitation enabling any third party to develop or
+   deploy Applications.
+
+2. You may Deploy the TEN VAD solely to create and enable deployment
+   of your Application(s) solely for your benefit and the benefit of your
+   direct End Users. If you prefer, you may include the following notice in
+   the documentation of your Application(s): "Powered by TEN VAD".
+
+3. "End Users" shall mean the end-users of your Application(s) who access
+   the TEN VAD solely to the extent necessary to access and use the
+   Application(s) you create or deploy using TEN VAD.
+
+4. "Application(s)" shall mean your software programs designed or developed
+   by using the TEN VAD or where deployment is enabled by the TEN
+   VAD.
+
+
+<br>
+
+## Future Open Source Plan
+
+TEN-VAD is currently released as a binary. Based on community feedback and interest, we plan to progressively open source the internal components of the binary.
 
 [back-to-top]: https://img.shields.io/badge/-Back_to_top-gray?style=flat-square
 
