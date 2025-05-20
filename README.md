@@ -496,9 +496,7 @@ cd ./examples
 
 ## Usage Guidance
 
-1. You may not (i) host the TEN VAD or the Derivative Works on any End
-   User devices, including but not limited to any mobile terminal devices
-   or (ii) Deploy the TEN VAD in a way that competes with Agora's
+1. You may not Deploy the TEN VAD in a way that competes with Agora's
    offerings and/or that allows others to compete with Agora's offerings,
    including without limitation enabling any third party to develop or
    deploy Applications.
@@ -515,6 +513,9 @@ cd ./examples
 4. "Application(s)" shall mean your software programs designed or developed
    by using the TEN VAD or where deployment is enabled by the TEN
    VAD.
+
+
+<br>
 
 ## Future Open Source Plan
 
