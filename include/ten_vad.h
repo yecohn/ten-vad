@@ -1,8 +1,3 @@
-//
-// This file is part of TEN Framework, an open source project.
-// Licensed under the Apache License, Version 2.0.
-// See the LICENSE file for more information.
-//
 #ifndef TEN_VAD_H
 #define TEN_VAD_H
 

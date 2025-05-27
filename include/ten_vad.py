@@ -1,8 +1,3 @@
-#
-# This file is part of TEN Framework, an open source project.
-# Licensed under the Apache License, Version 2.0.
-# See the LICENSE file for more information.
-#
 from ctypes import c_int, c_int32, c_float, c_size_t, CDLL, c_void_p, POINTER
 import numpy as np
 import os
