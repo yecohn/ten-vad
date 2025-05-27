@@ -5,6 +5,7 @@
 [![Issues closed](https://img.shields.io/github/issues-search?query=repo%3ATEN-framework%2Ften-vad%20is%3Aclosed&label=issues%20closed&labelColor=gray&color=green)](https://github.com/TEN-framework/ten-vad/issues)
 ![](https://img.shields.io/github/contributors/ten-framework/ten-vad?color=c4f042&labelColor=gray&style=flat-square)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome!-brightgreen.svg?style=flat-square)](https://github.com/TEN-framework/ten-vad/pulls)
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/TEN-framework/TEN-vad)
 
 [![GitHub watchers](https://img.shields.io/github/watchers/TEN-framework/ten-vad?style=social&label=Watch)](https://GitHub.com/TEN-framework/ten-vad/watchers/?WT.mc_id=academic-105485-koreyst)
 [![GitHub forks](https://img.shields.io/github/forks/TEN-framework/ten-vad?style=social&label=Fork)](https://GitHub.com/TEN-framework/ten-vad/network/?WT.mc_id=academic-105485-koreyst)
@@ -35,6 +36,7 @@
     - [Android](#4-android)
     - [iOS](#5-ios)
 - [TEN Ecosystem](#ten-ecosystem)
+- [Ask Questions](#ask-questions)
 - [Citations](#citations)
 - [Usage Guidance](#usage-guidance)
 - [Future Open Source Plan](#future-open-source-plan)
@@ -75,11 +77,13 @@ TEN is a collection of open-source projects for building real-time, multimodal c
 
 You are more than welcome to [Visit TEN Hugging Face Space](https://huggingface.co/spaces/TEN-framework/ten-agent-demo) to try VAD and Turn Detection together.
 
+<br>
 
 ## **Introduction**
 **TEN VAD** is a real-time voice activity detection system designed for enterprise use,  providing accurate frame-level speech activity detection. It shows superior precision compared to both WebRTC VAD and Silero VAD, which are commonly used in the industry. Additionally, TEN VAD offers lower computational complexity and reduced memory usage compared to Silero VAD. Meanwhile, the architecture's temporal efficiency enables rapid voice activity detection, significantly reducing end-to-end response and turn detection latency in conversational AI systems.
 
 
+<br>
 
 ## **Key Features**
 
@@ -477,6 +481,15 @@ cd ./examples
 | [**🎙️ TEN Agent**][ten-agent-link]<br>TEN Agent is a showcase of TEN Framewrok.<br><br> | ![][ten-agent-banner] |
 | **🎨 TMAN Designer** <br>TMAN Designer is low/no code option to make a voice agent with easy to use workflow UI.<br><br> | ![][tman-designer-banner] |
 | [**📒 TEN Portal**][ten-portal-link]<br>The official site of TEN framework, it has documentation and blog.<br><br>![][ten-portal-shield] | ![][ten-portal-banner] |
+
+<br>
+
+##  Ask Questions
+
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/TEN-framework/TEN-vad)
+
+Most questions can be answered by using DeepWiki, it is fast, intutive to use and supports multiple languages.
+
 <br>
 
 ## **Citations**
