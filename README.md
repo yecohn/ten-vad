@@ -12,6 +12,9 @@
 
 <br>
 
+*Latest News* 🔥
+- [2025/06] We are excited to announce the release of **WASM+JS** for Web WASM Support. 
+<br>
 
 ## Table of Contents
 
@@ -28,6 +31,8 @@
 - [Quick Start](#quick-start)
   - [Python Usage](#python-usage)
     - [Linux](#1-linux)
+  - [JS Usage](#js-usage)
+    - [Web](#1-web)
   - [C Usage](#c-usage)
     - [Linux](#1-linux-1)
     - [Windows](#2-windows)
@@ -156,6 +161,12 @@ We evaluated the RTF (Real-Time Factor) across five distinct platforms, each equ
     <td align="center"> 731KB </td>
   </tr>
   <tr>
+    <th align="center"> Web </th>
+    <td> macOS(M1) </td>
+    <td align="center"> 0.010 </td>
+    <td align="center"> 277KB </td>
+  </tr>
+  <tr>
     <th align="center" rowspan="2"> Android </th>
     <td> Galaxy J6+ (32bit, 425) </td>
     <td align="center"> 0.0570 </td>
@@ -179,7 +190,7 @@ We evaluated the RTF (Real-Time Factor) across five distinct platforms, each equ
 <br>
 
 ### **4. Multiple programming languages and platforms:**
-TEN VAD provides cross-platform C compatibility across five operating systems (Linux x64, Windows, macOS, Android, iOS), with Python bindings optimized for Linux x64.
+TEN VAD provides cross-platform C compatibility across five operating systems (Linux x64, Windows, macOS, Android, iOS), with Python bindings optimized for Linux x64, with wasm for Web.
 <br>
 <br>
 
@@ -211,7 +222,7 @@ The project supports five major platforms with dynamic library linking.
     <td align="center"> libten_vad.so </td>
     <td align="center"> x64 </td>
     <td align="center"> Python, C </td>
-    <td rowspan="5">ten_vad.h <br> ten_vad.py</td>
+    <td rowspan="5">ten_vad.h <br> ten_vad.py <br> ten_vad.js</td>
     <td>  </td>
   </tr>
   <tr>
@@ -226,6 +237,13 @@ The project supports five major platforms with dynamic library linking.
     <td align="center"> ten_vad.framework </td>
     <td align="center"> arm64, x86_64 </td>
     <td align="center"> C </td>
+    <td>  </td>
+  </tr>
+  <tr>
+    <th align="center"> Web </th>
+    <td align="center"> ten_vad.wasm </td>
+    <td align="center"> / </td>
+    <td align="center"> JS </td>
     <td>  </td>
   </tr>
   <tr>
@@ -313,6 +331,20 @@ pip install -U --force-reinstall -v git+https://github.com/TEN-framework/ten-vad
 
 ```
 from ten_vad import TenVad
+```
+<br>
+
+### **JS Usage**
+
+####  **1. Web**
+##### **Requirements**
+- Node.js (macOS v14.18.2, Linux v16.20.2 verified)
+- Terminal
+
+##### **Usage**
+```
+1) cd ./examples
+2) node test_node.js s0724-s0730.wav out.txt
 ```
 <br>
 
