@@ -12,6 +12,9 @@
 
 <br>
 
+*Latest News* 🔥
+- [2025/06] We are excited to announce the release of **WASM+JS** for Web WASM Support. 
+<br>
 
 ## Table of Contents
 
@@ -187,7 +190,7 @@ We evaluated the RTF (Real-Time Factor) across five distinct platforms, each equ
 <br>
 
 ### **4. Multiple programming languages and platforms:**
-TEN VAD provides cross-platform C compatibility across five operating systems (Linux x64, Windows, macOS, Web, Android, iOS), with Python bindings optimized for Linux x64.
+TEN VAD provides cross-platform C compatibility across five operating systems (Linux x64, Windows, macOS, Android, iOS), with Python bindings optimized for Linux x64, with wasm for Web.
 <br>
 <br>
 
