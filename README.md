@@ -140,7 +140,7 @@ We evaluated the RTF (Real-Time Factor) across five distinct platforms, each equ
     <td align="center"> 0.0150 </td>
     <td align="center" rowspan="2" valign="middle"> / </td>
     <td align="center" rowspan="3" valign="middle"> 306KB </td>
-    <td align="center" rowspan="9" style="white-space: nowrap;" valign="middle"> 2.16MB(JIT) / 2.22MB(ONNX) </td>
+    <td align="center" rowspan="10" style="white-space: nowrap;" valign="middle"> 2.16MB(JIT) / 2.22MB(ONNX) </td>
   </tr>
   <tr>
     <td style="white-space: nowrap;"> Intel(R) Xeon(R) Platinum 8253 </td>
@@ -155,7 +155,7 @@ We evaluated the RTF (Real-Time Factor) across five distinct platforms, each equ
     <th align="center"> Windows </th>
     <td> Intel i7-10710U </td>
     <td align="center"> 0.0150 </td>
-    <td align="center" rowspan="6" valign="middle"> / </td>
+    <td align="center" rowspan="7" valign="middle"> / </td>
     <td align="center" style="white-space: nowrap;"> 464KB(x86) / 508KB(x64) </td>
   </tr>
   <tr>
@@ -226,7 +226,7 @@ The project supports five major platforms with dynamic library linking.
     <td align="center"> libten_vad.so </td>
     <td align="center"> x64 </td>
     <td align="center"> Python, C </td>
-    <td rowspan="5">ten_vad.h <br> ten_vad.py <br> ten_vad.js</td>
+    <td rowspan="6">ten_vad.h <br> ten_vad.py <br> ten_vad.js</td>
     <td>  </td>
   </tr>
   <tr>
