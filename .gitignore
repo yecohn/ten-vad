@@ -10,6 +10,7 @@ examples/.DS_Store
 .vscode/
 include/__pycache__/
 examples/out.txt
+.DS_Store
 
 
 
