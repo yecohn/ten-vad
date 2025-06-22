@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ac22f2ff0291876b7d5069f957825d01abc06a3da84c9f4385154a8e99964096
-size 115
+framework module ten_vad {
+        umbrella header "ten_vad.h"
+        export *
+        module * { export * }
+    }
