@@ -237,7 +237,10 @@ cd ./examples
 3. Test
 ```
 python test.py s0724-s0730.wav out.txt
+
 ```
+4. TestSet download
+link to get the test set : https://drive.google.com/file/d/19l6KKoCtjOHaoXPdWo-oyhY6l-vvLHPE/view?usp=sharing
 
 ##### **By using pip:**
 
