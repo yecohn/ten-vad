@@ -354,7 +354,7 @@ from ten_vad import TenVad
 
 ### **C Usage**
 #### **Build Scripts**
-Located in examples/ directory and examples_onnx (for **ONNX** usage on Linux):
+Located in examples/ directory or examples_onnx/ (for **ONNX** usage on Linux):
 
 - Linux: build-and-deploy-linux.sh
 - Windows: build-and-deploy-windows.bat
@@ -374,7 +374,7 @@ Runtime library path configuration:
 - Configure toolchain and architecture settings
 
 #### **Overview of Usage**
-- Navigate to examples/ or examples_onx/ (for **ONNX** usage on Linux)
+- Navigate to examples/ or examples_onnx/ (for **ONNX** usage on Linux)
 - Execute platform-specific build script
 - Configure dynamic library path
 - Run demo with sample audio s0724-s0730.wav
