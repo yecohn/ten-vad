@@ -1,7 +1,8 @@
 //
+// Copyright © 2025 Agora
 // This file is part of TEN Framework, an open source project.
-// Licensed under the Apache License, Version 2.0.
-// See the LICENSE file for more information.
+// Licensed under the Apache License, Version 2.0, with certain conditions.
+// Refer to the "LICENSE" file in the root directory for more information.
 //
 #include <stdio.h>
 #include <stdint.h>
@@ -86,9 +87,16 @@ int vad_process(int16_t *input_buf, uint32_t frame_num,
   for (int i = 0; i < frame_num; ++i)
   {
     int16_t *audio_data = input_buf + i * hop_size;
-    ten_vad_process(ten_vad_handle, audio_data, hop_size,
-                    &out_probs[i], &out_flags[i]);
-    printf("[%d] %0.6f, %d\n", i, out_probs[i], out_flags[i]);
+    int res = ten_vad_process(ten_vad_handle, audio_data, hop_size,
+                              &out_probs[i], &out_flags[i]);
+    if (res == 0)
+    {
+      printf("[%d] %0.6f, %d\n", i, out_probs[i], out_flags[i]);
+    }
+    else
+    {
+      printf("ten_vad_process failed res %d\n", res);
+    }
   }
   uint64_t end = get_timestamp_ms();
   *use_time = (float)(end - start);
