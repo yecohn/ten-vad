@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/yehoshua/projects/vad/ten-vad/build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

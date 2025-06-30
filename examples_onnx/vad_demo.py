@@ -13,6 +13,8 @@ import onnxruntime as ort
 import argparse
 import os
 import sys
+from ten_vad_reconstructed import TenVAD
+import torch
 
 # Constants definition (corresponding to constants in C++ code)
 SAMPLE_RATE = 16000
@@ -62,6 +64,12 @@ FEATURE_STDS = np.array([
     5.096439361572e+00, 1.152136917114e+02
 ], dtype=np.float32)
 
+
+model = TenVAD()
+state_dict = torch.load("ten_vad_onnx_weights.pth")
+model.load_state_dict(state_dict)
+model.to("cuda")
+print("Model loaded")
 
 class TenVADONNX:
     """TEN VAD inference class based on ONNX"""
@@ -214,8 +222,13 @@ class TenVADONNX:
         for i in range(MODEL_IO_NUM - 1):
             inputs[input_names[i + 1]] = self.hidden_states[i]
         
-        # ONNX inference
-        outputs = self.onnx_session.run(None, inputs)
+        # # ONNX inference
+        outputs_onnx = self.onnx_session.run(None, inputs)
+
+        #Pytorch Inference
+        inputs_t = {k:torch.from_numpy(v).to("cuda") for k,v in inputs.items()}
+        with torch.inference_mode():
+            outputs = model(**inputs_t)
         
         # Get VAD score
         vad_score = float(outputs[0][0, 0, 0])
@@ -351,10 +364,13 @@ def print_vad_summary(segments):
 def main():
     """Main function"""
     parser = argparse.ArgumentParser(description='TEN VAD ONNX inference demo')
-    parser.add_argument('--input', type=str, required=True, help='Input audio file path')
-    parser.add_argument('--model', type=str, default='../src/onnx_model/ten-vad.onnx', 
+    parser.add_argument('--input', type=str, required=False, help='Input audio file path', default="testset/testset-audio-01.wav")
+    # parser.add_argument('--model', type=str, default='src/onnx_model/ten-vad.onnx', 
+    #                    help='ONNX model file path')
+
+    parser.add_argument('--model', type=str, default='infer_model.onnx', 
                        help='ONNX model file path')
-    parser.add_argument('--output', type=str, help='Output result file path')
+    parser.add_argument('--output', type=str, help='Output result file path', default="vad_result.txt")
     parser.add_argument('--threshold', type=float, default=0.5, help='VAD threshold')
     parser.add_argument('--labels', action='store_true', help='Extract and display VAD segment labels')
     parser.add_argument('--label_output', type=str, help='Output VAD labels to file')
@@ -415,25 +431,25 @@ def main():
             
         audio_frame = audio_data[start_idx:end_idx]
         
-        try:
-            vad_score, vad_result = vad.process_frame(audio_frame)
+        # try:
+        vad_score, vad_result = vad.process_frame(audio_frame)
+        
+        # Timestamp in seconds
+        timestamp = i * HOP_SIZE / SAMPLE_RATE
+        
+        results.append({
+            'frame': i,
+            'timestamp': timestamp,
+            'vad_score': vad_score,
+            'vad_result': vad_result
+        })
+        
+        if not args.quiet:
+            print(f"[{i:4d}] {timestamp:6.3f}s: score={vad_score:.6f}, result={vad_result}")
             
-            # Timestamp in seconds
-            timestamp = i * HOP_SIZE / SAMPLE_RATE
-            
-            results.append({
-                'frame': i,
-                'timestamp': timestamp,
-                'vad_score': vad_score,
-                'vad_result': vad_result
-            })
-            
-            if not args.quiet:
-                print(f"[{i:4d}] {timestamp:6.3f}s: score={vad_score:.6f}, result={vad_result}")
-            
-        except Exception as e:
-            print(f"Error: Failed to process frame {i}: {e}")
-            break
+        # except Exception as e:
+        #     print(f"Error: Failed to process frame {i}: {e}")
+        #     break
     
     # Save frame-level results to file
     if args.output:
