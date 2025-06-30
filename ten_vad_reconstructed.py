@@ -52,9 +52,8 @@ class TenVAD(nn.Module):
         self.sig = nn.Sigmoid()
 
     def forward(self, input_1, input_2=None, input_3=None, input_6=None, input_7=None):
-        # x: (B, 3, 41)  → (B, 1, 3, 41)
-        # B = input_1.size(0)
-        input_1 = input_1.unsqueeze(1)
+        input_1 = input_1.unsqueeze(-1)  # Add channel dimension: (B, 3, 41) → (B, 1, 3, 41)
+        input_1 = input_1.reshape(-1, 1, 3, 41)
 
         input_1 = self.conv_dw(input_1)  # (B, 1, 1, 41)
         input_1 = self.conv_pw(input_1)  # (B,16, 1, 41)
@@ -110,4 +109,4 @@ class TenVAD(nn.Module):
         input_1 = self.relu(input_1)
         input_1 = self.fc2(input_1)
         # return (self.sig(input_1), input_2, input_3, input_6, input_7)
-        return (self.sig(input_1).cpu().numpy(), input_2.cpu().numpy().squeeze(0), input_3.cpu().numpy().squeeze(0), input_6.cpu().numpy().squeeze(0), input_7.cpu().numpy().squeeze(0))
+        return (self.sig(input_1), input_2, input_3, input_6, input_7)
