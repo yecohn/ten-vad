@@ -71,7 +71,7 @@ model.load_state_dict(state_dict)
 model.to("cuda")
 print("Model loaded")
 
-class TenVADONNX:
+class TenVADPipeline:
     """TEN VAD inference class based on ONNX"""
     
     def __init__(self, onnx_model_path, threshold=0.5):
@@ -222,9 +222,6 @@ class TenVADONNX:
         for i in range(MODEL_IO_NUM - 1):
             inputs[input_names[i + 1]] = self.hidden_states[i]
         
-        # # ONNX inference
-        outputs_onnx = self.onnx_session.run(None, inputs)
-
         #Pytorch Inference
         inputs_t = {k:torch.from_numpy(v).to("cuda") for k,v in inputs.items()}
         with torch.inference_mode():
@@ -236,10 +233,8 @@ class TenVADONNX:
         # Update hidden states
         for i in range(MODEL_IO_NUM - 1):
             self.hidden_states[i] = outputs[i + 1]
-        
         # VAD decision
         vad_result = 1 if vad_score > self.threshold else 0
-        
         return vad_score, vad_result
     
     def reset(self):
@@ -368,9 +363,10 @@ def main():
     # parser.add_argument('--model', type=str, default='src/onnx_model/ten-vad.onnx', 
     #                    help='ONNX model file path')
 
-    parser.add_argument('--model', type=str, default='infer_model.onnx', 
+    # parser.add_argument('--model', type=str, default='src/onnx_model/ten-vad.onnx', 
+    parser.add_argument('--model', type=str, default='ten_vad_exported.onnx', 
                        help='ONNX model file path')
-    parser.add_argument('--output', type=str, help='Output result file path', default="vad_result.txt")
+    parser.add_argument('--output', type=str, help='Output result file path', default="vad_exported_result.txt")
     parser.add_argument('--threshold', type=float, default=0.5, help='VAD threshold')
     parser.add_argument('--labels', action='store_true', help='Extract and display VAD segment labels')
     parser.add_argument('--label_output', type=str, help='Output VAD labels to file')

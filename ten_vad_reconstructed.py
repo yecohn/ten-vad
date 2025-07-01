@@ -1,6 +1,6 @@
 import torch
 import torch.nn as nn
-
+import torch.nn.functional as F
 
 class TenVAD(nn.Module):
     def __init__(self):
@@ -34,7 +34,6 @@ class TenVAD(nn.Module):
             16,
             kernel_size=(1, 3),
             stride=(2, 2),
-            padding=(0, 1),  # asymmetric pad in ONNX, (0,0,0,1); (0,1) is close enough
             groups=16,
             bias=False,
         )
@@ -43,8 +42,8 @@ class TenVAD(nn.Module):
         # ─── RNN core ────────────────────────────────────────────────
         # After the conv stack we will build 5-frame windows so feature dim = 16*5 = 80
         self.window_size = 5  # equals context window used in original ONNX
-        self.lstm1 = nn.LSTM(80, 64)
-        self.lstm2 = nn.LSTM(64, 64)
+        self.lstm1 = nn.LSTM(80, 64, batch_first=True)
+        self.lstm2 = nn.LSTM(64, 64, batch_first=True)
 
         # ─── Densities ───────────────────────────────────────────────
         self.fc1 = nn.Linear(128, 32)  # 128 → 32
@@ -68,45 +67,29 @@ class TenVAD(nn.Module):
 
         # put the singleton height back for the second block
         input_1 = input_1.unsqueeze(2)  # (B,16,1,20)
+        input_1 = F.pad(input_1, (0,1,0,0), mode='constant', value=0)
         input_1 = self.sep2_dw(input_1)  # (B,16,1,20)
         input_1 = self.sep2_pw(input_1)
         input_1 = input_1.squeeze(2)  # (B,16,20)
         input_1 = self.relu(input_1)
 
-        # ─── match the ONNX reshape sequence ───
-        # ONNX steps: transpose (0,2,1) then reshape to (-1,1,80)
-        # Here we keep batch_first so final tensor is (B, 1, 80)
         input_1 = input_1.permute(0, 2, 1)  # (B, width=5, 16)
         B, W, C = input_1.shape  # W should be 5 after the stride-2 convs
         input_1 = input_1.reshape(B, 1, W * C)  # (B, 1, 80)
 
         # LSTM stack
-        #put this in input output 
-        # h1 = torch.zeros(1, B, 64, device=x.device) if h1 is None else h1
-        # c1 = torch.zeros(1, B, 64, device=x.device) if c1 is None else c1
         input_2 = input_2.unsqueeze(0)
         input_3 = input_3.unsqueeze(0)
         input_6 = input_6.unsqueeze(0)
         input_7 = input_7.unsqueeze(0)
 
         x1, (input_2, input_3) = self.lstm1(input_1, (input_2, input_3))  # (B, T, 64)
-        # input_2 = input_2.squeeze(0)
-        # input_3 = input_3.squeeze(0)
-
-        # h2 = torch.zeros(1, B, 64, device=x.device) if h2 is None else h2
-        # c2 = torch.zeros(1, B, 64, device=x.device) if c2 is None else c2
         x2, (input_6, input_7) = self.lstm2(x1, (input_6, input_7))  # (B, T, 64)
 
         # ONNX model concatenates outputs of both LSTM layers along feature axis -> 128
         input_1 = torch.cat([x2, x1], dim=2)  # (B, T, 128)
-        # shape_input1 = torch.tensor(input_1.shape, dtype=torch.int32)
-        # shape_input1_gather = torch.gather(shape_input1, 0, torch.tensor([0, 1]))
-        # shape_input1_gather = torch.cat([shape_input1_gather, torch.tensor([32])], axis=0).to(torch.int64)
-        # input_1 = input_1.reshape(shape_input1_gather)
-
         # dense layers
         input_1 = self.fc1(input_1)
         input_1 = self.relu(input_1)
         input_1 = self.fc2(input_1)
-        # return (self.sig(input_1), input_2, input_3, input_6, input_7)
         return (self.sig(input_1), input_2, input_3, input_6, input_7)
