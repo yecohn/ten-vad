@@ -1,0 +1,3 @@
+/home/yehoshua/projects/vad/ten-vad/build/CMakeFiles/ten_vad_demo.dir
+/home/yehoshua/projects/vad/ten-vad/build/CMakeFiles/edit_cache.dir
+/home/yehoshua/projects/vad/ten-vad/build/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,8 @@
+[
+{
+  "directory": "/home/yehoshua/projects/vad/ten-vad/build",
+  "command": "/usr/bin/clang -I/home/yehoshua/projects/vad/ten-vad/include -g -o CMakeFiles/ten_vad_demo.dir/main.c.o -c /home/yehoshua/projects/vad/ten-vad/examples/main.c",
+  "file": "/home/yehoshua/projects/vad/ten-vad/examples/main.c",
+  "output": "CMakeFiles/ten_vad_demo.dir/main.c.o"
+}
+]
